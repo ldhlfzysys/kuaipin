@@ -1,0 +1,68 @@
+命名规范：(驼峰)****************
+1、控件类（UILabel、UIButton、UIImageView）采用name+控件名方式
+例如：用户姓名的label：userNameLabel
+用户头像的imageView：userHeadImageView
+
+2、OC数据类型（NSDictionary、NSArray、NSString）采用名字单负数形式或+Info
+例如：用户列表的Array：users
+用户信息的Dictionary：userInfo
+用户的姓名String：userName
+
+3、基本数据类型（int、float）采取直接用名字表达
+例如：当前页数：int nowPage
+图片高度：float imageHeight
+
+4、协议的命名：类名+Delegate (不使用驼峰)
+例如：主页面的协议：MainViewDelegate
+
+5、自定义类的命名：类名
+例如：MainViewController类：MainViewController *mainViewController
+
+6、方法的命名：用英文句子去描述
+例如：接收到数据通知：- (void)reciveDataNotification:(Notification *)noti;
+登陆按钮的点击事件：- (void)loginButtonOnclick;
+注意：直接用动词去描述，不要使用do这样的开头。
+
+7、类目内的方法命名：'EA_'+'方法名'
+例如：NSDictionary（Utils）内通过key全部转成string的方法
+- (NSString*)EA_stringForKey:(NSString*)key;
+
+代码风格：********************
+1、同文件内保持一致书写风格。
+例如:
+if(){
+
+}
+
+2、一个文件中需要用#pragma mark去作代码内模块的分割，便于寻找代码。
+例如：
+#pragma mark LifeCycle
+(void)ViewDidLoad{
+
+}
+(instancetype)init{
+
+}
+#pragma mark UserAction
+(void)loginButtonOnclick{
+
+}
+
+3、方法的开头-和返回值的()间要有空格
+
+4、声明时类名和*间空格
+例如：@property(…)NSString *userName;
+
+
+
+
+
+5、头文件中方法名前需要填写注释，可以通过安装一款注释插件
+安装方法：
+1、打开终端输入curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+2、重启Xcode，在windows-package manager中，找到VVDocumenter-Xcode点击安装
+3、重启Xcode，在方法名前输入3个/符号，自动生成注释，根据注释填写方法的描述
+4、无法识别1中命令的，自己百度。
+
+
+
