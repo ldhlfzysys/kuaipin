@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO];
     UIButton *btn = [Tools getBackBarBtn];
     [btn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
@@ -84,6 +83,10 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [_nameInput.contentTextField resignFirstResponder];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 //- (void)dealloc{

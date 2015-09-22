@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        [self.navigationController setNavigationBarHidden:NO];
     UIButton *btn = [Tools getBackBarBtn];
     [btn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
@@ -130,6 +129,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+}
 
 @end
