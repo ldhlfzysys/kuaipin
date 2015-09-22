@@ -23,6 +23,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict Type:(MainTableViewControllerType)type{
     if (self = [super init]) {
+            [self.navigationController setNavigationBarHidden:NO];
         self.view.backgroundColor = UIColorFromRGB(0xe8e8e8);
         UIButton *btn = [Tools getBackBarBtn];
         [btn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];

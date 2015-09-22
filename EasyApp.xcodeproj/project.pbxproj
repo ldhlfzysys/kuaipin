@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6B45C91FC03B08C04ACD1932 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD9B050299BF31515A6094F /* libPods.a */; };
+		B84D46A41BB17E9900C39A22 /* main_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46A31BB17E9900C39A22 /* main_background.png */; };
+		B84D46A61BB1805000C39A22 /* main_button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46A51BB1805000C39A22 /* main_button_background.png */; };
+		B84D46AC1BB1817500C39A22 /* main_button_findjob.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46A71BB1817500C39A22 /* main_button_findjob.png */; };
+		B84D46AD1BB1817500C39A22 /* main_button_findworker.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46A81BB1817500C39A22 /* main_button_findworker.png */; };
+		B84D46AE1BB1817500C39A22 /* main_button_issue.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46A91BB1817500C39A22 /* main_button_issue.png */; };
+		B84D46AF1BB1817500C39A22 /* main_button_registerworker.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46AA1BB1817500C39A22 /* main_button_registerworker.png */; };
+		B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46AB1BB1817500C39A22 /* main_button_usercenter.png */; };
+		B84D46B21BB183C900C39A22 /* main_background_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B11BB183C900C39A22 /* main_background_2.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
-		B8A62AA71B875E3D004063E8 /* findJobBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A62AA51B875E3D004063E8 /* findJobBackground.png */; };
-		B8A62AA81B875E3D004063E8 /* findServerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A62AA61B875E3D004063E8 /* findServerBackground.png */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
 		B8A62AAE1B87FC28004063E8 /* EAButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAD1B87FC28004063E8 /* EAButtonView.m */; };
 		B8A62AB11B880A18004063E8 /* buttonBackground_green.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A62AAF1B880A18004063E8 /* buttonBackground_green.png */; };
@@ -65,12 +71,18 @@
 		0EA807D3A45E8C713025834F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2AD9B050299BF31515A6094F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8369D68C00C585B614D80969 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B84D46A31BB17E9900C39A22 /* main_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background.png; sourceTree = "<group>"; };
+		B84D46A51BB1805000C39A22 /* main_button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_background.png; sourceTree = "<group>"; };
+		B84D46A71BB1817500C39A22 /* main_button_findjob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_findjob.png; sourceTree = "<group>"; };
+		B84D46A81BB1817500C39A22 /* main_button_findworker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_findworker.png; sourceTree = "<group>"; };
+		B84D46A91BB1817500C39A22 /* main_button_issue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_issue.png; sourceTree = "<group>"; };
+		B84D46AA1BB1817500C39A22 /* main_button_registerworker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_registerworker.png; sourceTree = "<group>"; };
+		B84D46AB1BB1817500C39A22 /* main_button_usercenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_usercenter.png; sourceTree = "<group>"; };
+		B84D46B11BB183C900C39A22 /* main_background_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background_2.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
 		B89EC3741B89F221006A0410 /* EASingleLineText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EASingleLineText.m; sourceTree = "<group>"; };
-		B8A62AA51B875E3D004063E8 /* findJobBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = findJobBackground.png; sourceTree = "<group>"; };
-		B8A62AA61B875E3D004063E8 /* findServerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = findServerBackground.png; sourceTree = "<group>"; };
 		B8A62AA91B87FBE9004063E8 /* EALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EALoginViewController.h; sourceTree = "<group>"; };
 		B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EALoginViewController.m; sourceTree = "<group>"; };
 		B8A62AAC1B87FC28004063E8 /* EAButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAButtonView.h; sourceTree = "<group>"; };
@@ -292,13 +304,19 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46B11BB183C900C39A22 /* main_background_2.png */,
+				B84D46A71BB1817500C39A22 /* main_button_findjob.png */,
+				B84D46A81BB1817500C39A22 /* main_button_findworker.png */,
+				B84D46A91BB1817500C39A22 /* main_button_issue.png */,
+				B84D46AA1BB1817500C39A22 /* main_button_registerworker.png */,
+				B84D46AB1BB1817500C39A22 /* main_button_usercenter.png */,
+				B84D46A51BB1805000C39A22 /* main_button_background.png */,
+				B84D46A31BB17E9900C39A22 /* main_background.png */,
 				B8A62AC11B885566004063E8 /* buttonSelected.png */,
 				B8A62AC21B885566004063E8 /* buttonUnselected.png */,
 				B8A62AB61B881B5A004063E8 /* getCheckCodeBackground.png */,
 				B8A62AAF1B880A18004063E8 /* buttonBackground_green.png */,
 				B8A62AB01B880A18004063E8 /* buttonBackground_red.png */,
-				B8A62AA51B875E3D004063E8 /* findJobBackground.png */,
-				B8A62AA61B875E3D004063E8 /* findServerBackground.png */,
 				B8EDCE521B802A7A00937F76 /* back.png */,
 				B8EDCE751B8752AD00937F76 /* singleLineInputBackground.png */,
 				B8EDCE531B802A7A00937F76 /* goahead.png */,
@@ -413,26 +431,32 @@
 				B8EDCE5B1B874D7000937F76 /* ExampleDemo in Resources */,
 				B8EDCE6F1B874F1B00937F76 /* icon-120.png in Resources */,
 				B8EDCE701B874F1B00937F76 /* icon-144.png in Resources */,
-				B8A62AA81B875E3D004063E8 /* findServerBackground.png in Resources */,
 				B8EDCE731B874F1B00937F76 /* iTunesArtwork.png in Resources */,
+				B84D46A61BB1805000C39A22 /* main_button_background.png in Resources */,
 				B8CD2E5F1B76EFA300960B5E /* PodsUsage in Resources */,
 				B8A62AC31B885566004063E8 /* buttonSelected.png in Resources */,
 				B8EDCE561B802A7A00937F76 /* back.png in Resources */,
+				B84D46B21BB183C900C39A22 /* main_background_2.png in Resources */,
 				B8EDCE681B874F1B00937F76 /* icon-29.png in Resources */,
+				B84D46AC1BB1817500C39A22 /* main_button_findjob.png in Resources */,
 				B8EDCE581B802A7A00937F76 /* registerWorker.png in Resources */,
 				B8EDCE6D1B874F1B00937F76 /* icon-80.png in Resources */,
 				B8EDCE6A1B874F1B00937F76 /* icon-58.png in Resources */,
 				B8EDCE721B874F1B00937F76 /* icon-512.png in Resources */,
 				B8EDCE711B874F1B00937F76 /* icon-152.png in Resources */,
+				B84D46AF1BB1817500C39A22 /* main_button_registerworker.png in Resources */,
+				B84D46A41BB17E9900C39A22 /* main_background.png in Resources */,
+				B84D46AE1BB1817500C39A22 /* main_button_issue.png in Resources */,
+				B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */,
 				B8CD2E901B7705CB00960B5E /* Default-568h@2x.png in Resources */,
 				B8EDCE6B1B874F1B00937F76 /* icon-72.png in Resources */,
 				B8EDCE591B802A7A00937F76 /* sendTask.png in Resources */,
 				B8EDCE571B802A7A00937F76 /* goahead.png in Resources */,
 				B8A62AB21B880A18004063E8 /* buttonBackground_red.png in Resources */,
 				B8A62AB71B881B5A004063E8 /* getCheckCodeBackground.png in Resources */,
-				B8A62AA71B875E3D004063E8 /* findJobBackground.png in Resources */,
 				B8EDCE6E1B874F1B00937F76 /* icon-114.png in Resources */,
 				B8CD2E6B1B76F07400960B5E /* ProjectDeclare in Resources */,
+				B84D46AD1BB1817500C39A22 /* main_button_findworker.png in Resources */,
 				B8EDCE691B874F1B00937F76 /* icon-57.png in Resources */,
 				B8A62AB11B880A18004063E8 /* buttonBackground_green.png in Resources */,
 				B8A62AC41B885566004063E8 /* buttonUnselected.png in Resources */,

@@ -224,11 +224,11 @@
     }
     
     if (_nowType == MainTableViewControllerTypeFindJob){        
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%d%@",[[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"] integerValue],@"元"];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%ld%@",(long)[[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"] integerValue],@"元"];
         cell.contentLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskInfo"];
         cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"userName"];
     }else{
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%d%@",[[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerAge"]integerValue],@"岁"];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%ld%@",(long)[[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerAge"]integerValue],@"岁"];
         cell.contentLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"workerSkill"];
         cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"workerName"];
     }
@@ -239,6 +239,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DetailViewController *detailVC = [[DetailViewController alloc]initWithDictionary:[_datas objectAtIndex:indexPath.row] Type:_nowType];
     [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 @end

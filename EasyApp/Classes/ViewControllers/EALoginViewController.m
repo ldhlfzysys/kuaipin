@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO];
     UIButton *btn = [Tools getBackBarBtn];
     [btn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithCustomView:btn];

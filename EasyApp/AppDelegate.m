@@ -21,6 +21,7 @@
     [self.window makeKeyAndVisible];
     MainViewController *mainVC = [[MainViewController alloc]init];
     UINavigationController *mainNav = [Tools getNavByType:NavTypeMainPage controller:mainVC];
+    [mainNav setNavigationBarHidden:YES];
     [self.window setRootViewController:mainNav];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networdError:) name:NETWORKERROR object:nil];

@@ -16,52 +16,63 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        UIScrollView *mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        UIScrollView *mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, -STATUSBAR, SCREEN_WIDTH, SCREEN_HEIGHT + STATUSBAR)];
         mainScrollView.backgroundColor = [UIColor whiteColor];
         mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 568);
         [self.view addSubview:mainScrollView];
+        UIImageView *backgroundImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT + STATUSBAR)];
+        backgroundImage.image = [UIImage imageNamed:@"main_background"];
+        [mainScrollView addSubview:backgroundImage];
         
-        UIButton *findServer = [[UIButton alloc]initWithFrame:CGRectMake(0, 12.5, SCREEN_WIDTH, 180)];
-        [findServer setBackgroundImage:[UIImage imageNamed:@"findServerBackground"] forState:UIControlStateNormal];
-        [findServer setTitle:@"找服务" forState:UIControlStateNormal];
-        [findServer setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        UIImageView *backgroundImage2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/1.7, SCREEN_WIDTH/1.7 * 618 / 358)];
+        backgroundImage2.image = [UIImage imageNamed:@"main_background_2"];
+        backgroundImage2.EA_Right = SCREEN_WIDTH;
+        backgroundImage2.EA_CenterY = (SCREEN_HEIGHT+STATUSBAR)/2;
+        [mainScrollView addSubview:backgroundImage2];
+        
+        UIButton *findServer = [self buttonWithFrame:CGRectMake(170, 100, 120, 60) Title:@"找人工" Image:@"main_button_findworker"];
         [findServer addTarget:self action:@selector(findServerClicked) forControlEvents:UIControlEventTouchUpInside];
-        findServer.titleLabel.font = [UIFont systemFontOfSize:35];
         [mainScrollView addSubview:findServer];
         
-        UIButton *findJob = [[UIButton alloc]initWithFrame:CGRectMake(0, 205, SCREEN_WIDTH, 180)];
-        [findJob setBackgroundImage:[UIImage imageNamed:@"findJobBackground"] forState:UIControlStateNormal];
-        [findJob setTitle:@"找工作" forState:UIControlStateNormal];
-        [findJob setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        UIButton *findJob = [self buttonWithFrame:CGRectMake(70, 160, 120, 60) Title:@"找工作" Image:@"main_button_findjob"];
         [findJob addTarget:self action:@selector(findJobClicked) forControlEvents:UIControlEventTouchUpInside];
-        findJob.titleLabel.font = [UIFont systemFontOfSize:35];
         [mainScrollView addSubview:findJob];
         
-        UIButton *sendTask = [[UIButton alloc]initWithFrame:CGRectMake(0, 385, SCREEN_WIDTH/2, 183)];
+        UIButton *sendTask =[self buttonWithFrame:CGRectMake(20, (SCREEN_HEIGHT+STATUSBAR)/2-30, 130, 60) Title:@"工作发布" Image:@"main_button_issue"];
         [sendTask addTarget:self action:@selector(sendTaskClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:sendTask];
-        UIImageView *sendTaskImage = [[UIImageView alloc]initWithFrame:CGRectMake(45, 22, 55, 55)];
-        sendTaskImage.image = [UIImage imageNamed:@"sendTask"];
-        [sendTask addSubview:sendTaskImage];
-        UILabel *sendTaskLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 86, SCREEN_WIDTH/2, 15)];
-        sendTaskLabel.text = @"任务发布";
-        sendTaskLabel.textColor = UIColorFromRGB(0x5a5a5a);
-        sendTaskLabel.textAlignment = NSTextAlignmentCenter;
-        [sendTask addSubview:sendTaskLabel];
         
-        UIButton *registerWorker = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2, 385, SCREEN_WIDTH/2, 183)];
+        
+        UIButton *registerWorker = [self buttonWithFrame:CGRectMake(60, SCREEN_HEIGHT+STATUSBAR-220, 130, 60) Title:@"应聘登记" Image:@"main_button_registerworker"];
         [registerWorker addTarget:self action:@selector(registerWorkerClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:registerWorker];
-        UIImageView *registerWorkerImage = [[UIImageView alloc]initWithFrame:CGRectMake(45, 22, 55, 55)];
-        registerWorkerImage.image = [UIImage imageNamed:@"registerWorker"];
-        [registerWorker addSubview:registerWorkerImage];
-        UILabel *registerWorkerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 86, SCREEN_WIDTH/2, 15)];
-        registerWorkerLabel.text = @"劳工登记";
-        registerWorkerLabel.textColor = UIColorFromRGB(0x5a5a5a);
-        registerWorkerLabel.textAlignment = NSTextAlignmentCenter;
-        [registerWorker addSubview:registerWorkerLabel];
+        
+        UIButton *userCenter = [self buttonWithFrame:CGRectMake(160, SCREEN_HEIGHT+STATUSBAR-160, 130, 60) Title:@"用户中心" Image:@"main_button_usercenter"];
+        [userCenter addTarget:self action:@selector(userCenterClicked) forControlEvents:UIControlEventTouchUpInside];
+        [mainScrollView addSubview:userCenter];
+        
     }
     return self;
+}
+
+- (UIButton *)buttonWithFrame:(CGRect)frame Title:(NSString *)title Image:(NSString *)imageName{
+    UIButton *button = [[UIButton alloc]initWithFrame:frame];
+    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.height, frame.size.height)];
+    icon.EA_Right = button.frame.size.width;
+    icon.image = [UIImage imageNamed:@"main_button_background"];
+    [button addSubview:icon];
+    
+    UIImageView *iconHeader = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.height/1.5, frame.size.height/1.5)];
+    iconHeader.image = [UIImage imageNamed:imageName];
+    [button addSubview:iconHeader];
+    iconHeader.EA_CenterX = icon.EA_CenterX;
+    iconHeader.EA_CenterY = icon.EA_CenterY;
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+    label.font = [UIFont boldSystemFontOfSize:15];
+    label.text = title;
+    [button addSubview:label];
+    return button;
 }
 
 //找服务
@@ -101,12 +112,19 @@
     }
 }
 
+//用户中心
+- (void)userCenterClicked{
+    
+}
+
 - (void)refesh{
     [[NetWorkManager sharedManager] sendGetRequest:APIlogin param:nil CallBackHandle:^(id responseObject){
         
     }];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 @end

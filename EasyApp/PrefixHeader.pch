@@ -34,7 +34,7 @@
 #define EAFrame CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 
 //状态栏高度
-#define STATUSBAR [[UIApplication sharedApplication] statusBarFrame]
+#define STATUSBAR [[UIApplication sharedApplication] statusBarFrame].size.height
 
 //沙盒路径
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
