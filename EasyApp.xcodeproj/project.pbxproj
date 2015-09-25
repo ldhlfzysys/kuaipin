@@ -16,6 +16,11 @@
 		B84D46AF1BB1817500C39A22 /* main_button_registerworker.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46AA1BB1817500C39A22 /* main_button_registerworker.png */; };
 		B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46AB1BB1817500C39A22 /* main_button_usercenter.png */; };
 		B84D46B21BB183C900C39A22 /* main_background_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B11BB183C900C39A22 /* main_background_2.png */; };
+		B84D46B51BB573AF00C39A22 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46B41BB573AF00C39A22 /* UserCenterViewController.m */; };
+		B84D46BA1BB577A400C39A22 /* usercenter_resetinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B61BB577A400C39A22 /* usercenter_resetinfo.png */; };
+		B84D46BB1BB577A400C39A22 /* usercenter_resetpassword.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */; };
+		B84D46BC1BB577A400C39A22 /* usercenter_workermanage.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */; };
+		B84D46BD1BB577A400C39A22 /* usercenter_workmanage.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B91BB577A400C39A22 /* usercenter_workmanage.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -79,6 +84,12 @@
 		B84D46AA1BB1817500C39A22 /* main_button_registerworker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_registerworker.png; sourceTree = "<group>"; };
 		B84D46AB1BB1817500C39A22 /* main_button_usercenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_button_usercenter.png; sourceTree = "<group>"; };
 		B84D46B11BB183C900C39A22 /* main_background_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_background_2.png; sourceTree = "<group>"; };
+		B84D46B31BB573AF00C39A22 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterViewController.h; sourceTree = "<group>"; };
+		B84D46B41BB573AF00C39A22 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
+		B84D46B61BB577A400C39A22 /* usercenter_resetinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_resetinfo.png; sourceTree = "<group>"; };
+		B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_resetpassword.png; sourceTree = "<group>"; };
+		B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_workermanage.png; sourceTree = "<group>"; };
+		B84D46B91BB577A400C39A22 /* usercenter_workmanage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_workmanage.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -297,6 +308,8 @@
 				B8A62AC91B887530004063E8 /* MainTableViewController.m */,
 				B89EC3701B89E9DA006A0410 /* DetailViewController.h */,
 				B89EC3711B89E9DA006A0410 /* DetailViewController.m */,
+				B84D46B31BB573AF00C39A22 /* UserCenterViewController.h */,
+				B84D46B41BB573AF00C39A22 /* UserCenterViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +317,10 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46B61BB577A400C39A22 /* usercenter_resetinfo.png */,
+				B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */,
+				B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */,
+				B84D46B91BB577A400C39A22 /* usercenter_workmanage.png */,
 				B84D46B11BB183C900C39A22 /* main_background_2.png */,
 				B84D46A71BB1817500C39A22 /* main_button_findjob.png */,
 				B84D46A81BB1817500C39A22 /* main_button_findworker.png */,
@@ -428,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84D46BB1BB577A400C39A22 /* usercenter_resetpassword.png in Resources */,
 				B8EDCE5B1B874D7000937F76 /* ExampleDemo in Resources */,
 				B8EDCE6F1B874F1B00937F76 /* icon-120.png in Resources */,
 				B8EDCE701B874F1B00937F76 /* icon-144.png in Resources */,
@@ -439,6 +457,7 @@
 				B84D46B21BB183C900C39A22 /* main_background_2.png in Resources */,
 				B8EDCE681B874F1B00937F76 /* icon-29.png in Resources */,
 				B84D46AC1BB1817500C39A22 /* main_button_findjob.png in Resources */,
+				B84D46BC1BB577A400C39A22 /* usercenter_workermanage.png in Resources */,
 				B8EDCE581B802A7A00937F76 /* registerWorker.png in Resources */,
 				B8EDCE6D1B874F1B00937F76 /* icon-80.png in Resources */,
 				B8EDCE6A1B874F1B00937F76 /* icon-58.png in Resources */,
@@ -449,6 +468,7 @@
 				B84D46AE1BB1817500C39A22 /* main_button_issue.png in Resources */,
 				B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */,
 				B8CD2E901B7705CB00960B5E /* Default-568h@2x.png in Resources */,
+				B84D46BD1BB577A400C39A22 /* usercenter_workmanage.png in Resources */,
 				B8EDCE6B1B874F1B00937F76 /* icon-72.png in Resources */,
 				B8EDCE591B802A7A00937F76 /* sendTask.png in Resources */,
 				B8EDCE571B802A7A00937F76 /* goahead.png in Resources */,
@@ -457,6 +477,7 @@
 				B8EDCE6E1B874F1B00937F76 /* icon-114.png in Resources */,
 				B8CD2E6B1B76F07400960B5E /* ProjectDeclare in Resources */,
 				B84D46AD1BB1817500C39A22 /* main_button_findworker.png in Resources */,
+				B84D46BA1BB577A400C39A22 /* usercenter_resetinfo.png in Resources */,
 				B8EDCE691B874F1B00937F76 /* icon-57.png in Resources */,
 				B8A62AB11B880A18004063E8 /* buttonBackground_green.png in Resources */,
 				B8A62AC41B885566004063E8 /* buttonUnselected.png in Resources */,
@@ -508,6 +529,7 @@
 			files = (
 				B8CD2E641B76EFAB00960B5E /* AppUser.m in Sources */,
 				B8EDCE791B87535900937F76 /* EASingleLineInputView.m in Sources */,
+				B84D46B51BB573AF00C39A22 /* UserCenterViewController.m in Sources */,
 				B8CD2E601B76EFA300960B5E /* NSDictionary+Utils.m in Sources */,
 				B8CD2E8E1B7700AC00960B5E /* Tools.m in Sources */,
 				B8A62ACA1B887530004063E8 /* MainTableViewController.m in Sources */,

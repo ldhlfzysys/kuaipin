@@ -80,7 +80,7 @@
                               blockSelf.workerTypeInput.contentTextField.text,@"workerMajor",
                               blockSelf.educatedInput.contentTextField.text,@"workerEducation",
                               blockSelf.aboutmeInput.contentTextField.text,@"workerDetail",
-                              blockSelf.addressInput.contentTextField.text,@"workerAddress",
+                              blockSelf.addressInput.areaSelect.areaLabel.text,@"workerAddress",
                               blockSelf.priceInput.contentTextField.text,@"workerSalary",
                               blockSelf.phoneInput.contentTextField.text,@"workerMobile",nil];
         [[NetWorkManager sharedManager]sendGetRequest:APIaddworker param:dict CallBackHandle:^(id responseObject){

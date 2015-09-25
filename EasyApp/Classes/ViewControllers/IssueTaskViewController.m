@@ -13,11 +13,12 @@
 @interface IssueTaskViewController ()
 @property (nonatomic, retain) EASingleLineInputView *workerTypeInput;
 @property (nonatomic, retain) EASingleLineInputView *genderInput;
-@property (nonatomic, retain) EASingleLineInputView *ageInput;
 @property (nonatomic, retain) EASingleLineInputView *priceInput;
 @property (nonatomic, retain) EASingleLineInputView *educatedInput;
 @property (nonatomic, retain) EASingleLineInputView *addressInput;
 @property (nonatomic, retain) EASingleLineInputView *aboutmeInput;
+@property (nonatomic, retain) EASingleLineInputView *areaInput;
+@property (nonatomic, retain) EASingleLineInputView *detailaddressInput;
 @property (nonatomic, retain) EASingleLineInputView *contactInput;
 @property (nonatomic, retain) EASingleLineInputView *phoneInput;
 
@@ -42,22 +43,29 @@
     _genderInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 67, SCREEN_WIDTH - 24, 30) Title:@"性别要求" Placeholder:@""];
     _genderInput.needGenderSelectButton = YES;
     [self.view addSubview:_genderInput];
-    _ageInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 109, SCREEN_WIDTH - 24, 30) Title:@"年龄要求" Placeholder:@"请选择年龄段"];
-    [self.view addSubview:_ageInput];
-    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 151, SCREEN_WIDTH - 24, 30) Title:@"提供薪酬" Placeholder:@"请输入提供的薪资"];
+
+    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 109, SCREEN_WIDTH - 24, 30) Title:@"提供薪酬" Placeholder:@"请输入提供的薪资"];
     [self.view addSubview:_priceInput];
-    _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"文化要求" Placeholder:@"请选择文化程度"];
+    _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 151, SCREEN_WIDTH - 24, 30) Title:@"文化要求" Placeholder:@"请选择文化程度"];
     [self.view addSubview:_educatedInput];
-    _addressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 234, SCREEN_WIDTH - 24, 30) Title:@"用人单位" Placeholder:@"请输入单位地址"];
+    _addressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"用人单位" Placeholder:@"请输入单位地址"];
     [self.view addSubview:_addressInput];
-    _aboutmeInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 276, SCREEN_WIDTH - 24, 30) Title:@"工作内容" Placeholder:@"请用简短的文字介绍工作"];
+    _aboutmeInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 234, SCREEN_WIDTH - 24, 30) Title:@"工作内容" Placeholder:@"请用简短的文字介绍工作"];
     [self.view addSubview:_aboutmeInput];
-    _contactInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 318, SCREEN_WIDTH - 24, 30) Title:@"联系人" Placeholder:@"请输入联系人姓名"];
+    
+    _areaInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 276, SCREEN_WIDTH - 24, 30) Title:@"地区" Placeholder:@""];
+    _areaInput.needAreaSelect = YES;
+    [self.view addSubview:_areaInput];
+    
+    _detailaddressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 318, SCREEN_WIDTH - 24, 30) Title:@"街道" Placeholder:@"填写详细地址"];
+    [self.view addSubview:_detailaddressInput];
+    
+    _contactInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"联系人" Placeholder:@"请输入联系人姓名"];
     [self.view addSubview:_contactInput];
-    _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"联系电话" Placeholder:@"请输入联系人电话"];
+    _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 400, SCREEN_WIDTH - 24, 30) Title:@"联系电话" Placeholder:@"请输入联系人电话"];
     [self.view addSubview:_phoneInput];
     
-    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 410, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
+    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 460, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
     [self.view addSubview:_confirmButton];
     
     __block IssueTaskViewController *blockSelf = self;
@@ -66,15 +74,17 @@
         AppUser *user = [DataCenterManager sharedManager].currentUser;
         NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:
                               user.uuid,@"userUuid",
-                              user.name,@"userName",
-                              user.mobile,@"userMobile",
-                              blockSelf.aboutmeInput.contentTextField.text,@"taskInfo",
-                              blockSelf.ageInput.contentTextField.text,@"age",
-                              blockSelf.genderInput.genderSelectButton.gender,@"gender",
+                              blockSelf.contactInput.contentTextField.text,@"userName",
+                              blockSelf.phoneInput.contentTextField.text,@"userMobile",
                               blockSelf.workerTypeInput.contentTextField.text,@"taskType",
+                              blockSelf.aboutmeInput.contentTextField.text,@"taskInfo",
+                              blockSelf.genderInput.genderSelectButton.gender,@"taskGender",
+                              blockSelf.priceInput.contentTextField.text,@"taskFee",
                               blockSelf.educatedInput.contentTextField.text,@"taskEducation",
                               blockSelf.addressInput.contentTextField.text,@"taskEmployer",
-                              blockSelf.priceInput.contentTextField.text,@"taskFee",
+                              blockSelf.aboutmeInput.contentTextField.text,@"taskInfo",
+                              blockSelf.areaInput.areaSelect.areaLabel.text,@"taskRegion",
+                              blockSelf.detailaddressInput.contentTextField.text,@"taskRoad",
                               blockSelf.phoneInput.contentTextField.text,@"workerMobile",nil];
         [[NetWorkManager sharedManager]sendGetRequest:APIaddtask param:dict CallBackHandle:^(id responseObject){
             if ([[responseObject objectForKey:@"status"] integerValue] == 0) {

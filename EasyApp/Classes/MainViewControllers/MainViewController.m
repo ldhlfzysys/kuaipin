@@ -11,6 +11,7 @@
 #import "RegisterWorkerViewController.h"
 #import "IssueTaskViewController.h"
 #import "MainTableViewController.h"
+#import "UserCenterViewController.h"
 
 @implementation MainViewController
 
@@ -115,6 +116,13 @@
 //用户中心
 - (void)userCenterClicked{
     
+    if ([DataCenterManager sharedManager].currentUser == nil) {
+        EALoginViewController *loginVC = [[EALoginViewController alloc]init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+    }else{
+        UserCenterViewController *usercenterVC = [[UserCenterViewController alloc]init];
+        [self.navigationController pushViewController:usercenterVC animated:YES];
+    }
 }
 
 - (void)refesh{

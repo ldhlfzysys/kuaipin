@@ -17,6 +17,7 @@
         UILabel *contentLabel = [self labelWithFrame:CGRectMake(78, 0, SCREEN_WIDTH - 90, frame.size.height)];
         headTitleLabel.text = title;
         contentLabel.text = content;
+        contentLabel.numberOfLines = 0;
         [self addSubview:headTitleLabel];
         [self addSubview:contentLabel];
     }

@@ -31,10 +31,12 @@
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_HEIGHT_REAL [UIScreen mainScreen].bounds.size.height - 64
 #define EAFrame CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 
 //状态栏高度
 #define STATUSBAR [[UIApplication sharedApplication] statusBarFrame].size.height
+#define NAVBAR [[UIApplication sharedApplication] statusBarFrame].size.height
 
 //沙盒路径
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
