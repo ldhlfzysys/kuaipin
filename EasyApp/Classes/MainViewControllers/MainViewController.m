@@ -21,14 +21,14 @@
         mainScrollView.backgroundColor = [UIColor whiteColor];
         mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 568);
         [self.view addSubview:mainScrollView];
-        UIImageView *backgroundImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT + STATUSBAR)];
+        UIImageView *backgroundImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 568 + STATUSBAR)];
         backgroundImage.image = [UIImage imageNamed:@"main_background"];
         [mainScrollView addSubview:backgroundImage];
         
         UIImageView *backgroundImage2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/1.7, SCREEN_WIDTH/1.7 * 618 / 358)];
         backgroundImage2.image = [UIImage imageNamed:@"main_background_2"];
         backgroundImage2.EA_Right = SCREEN_WIDTH;
-        backgroundImage2.EA_CenterY = (SCREEN_HEIGHT+STATUSBAR)/2;
+        backgroundImage2.EA_CenterY = (568+STATUSBAR)/2;
         [mainScrollView addSubview:backgroundImage2];
         
         UIButton *findServer = [self buttonWithFrame:CGRectMake(170, 100, 120, 60) Title:@"找人工" Image:@"main_button_findworker"];
@@ -39,16 +39,16 @@
         [findJob addTarget:self action:@selector(findJobClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:findJob];
         
-        UIButton *sendTask =[self buttonWithFrame:CGRectMake(20, (SCREEN_HEIGHT+STATUSBAR)/2-30, 130, 60) Title:@"工作发布" Image:@"main_button_issue"];
+        UIButton *sendTask =[self buttonWithFrame:CGRectMake(20, (568+STATUSBAR)/2-30, 130, 60) Title:@"工作发布" Image:@"main_button_issue"];
         [sendTask addTarget:self action:@selector(sendTaskClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:sendTask];
         
         
-        UIButton *registerWorker = [self buttonWithFrame:CGRectMake(60, SCREEN_HEIGHT+STATUSBAR-220, 130, 60) Title:@"应聘登记" Image:@"main_button_registerworker"];
+        UIButton *registerWorker = [self buttonWithFrame:CGRectMake(60, 568+STATUSBAR-220, 130, 60) Title:@"应聘登记" Image:@"main_button_registerworker"];
         [registerWorker addTarget:self action:@selector(registerWorkerClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:registerWorker];
         
-        UIButton *userCenter = [self buttonWithFrame:CGRectMake(160, SCREEN_HEIGHT+STATUSBAR-160, 130, 60) Title:@"用户中心" Image:@"main_button_usercenter"];
+        UIButton *userCenter = [self buttonWithFrame:CGRectMake(160, 568+STATUSBAR-160, 130, 60) Title:@"用户中心" Image:@"main_button_usercenter"];
         [userCenter addTarget:self action:@selector(userCenterClicked) forControlEvents:UIControlEventTouchUpInside];
         [mainScrollView addSubview:userCenter];
         
