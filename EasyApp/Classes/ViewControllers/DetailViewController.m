@@ -38,7 +38,6 @@
         UIScrollView *mainScrollView = [[UIScrollView alloc]init];
         mainScrollView.backgroundColor = UIColorFromRGB(0xe8e8e8);
         [self.view addSubview:mainScrollView];
-        NSLog(@"%@",dict);
         
         
         if (type==MainTableViewControllerTypeFindServer) {//worker

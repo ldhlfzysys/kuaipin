@@ -21,6 +21,11 @@
 		B84D46BB1BB577A400C39A22 /* usercenter_resetpassword.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */; };
 		B84D46BC1BB577A400C39A22 /* usercenter_workermanage.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */; };
 		B84D46BD1BB577A400C39A22 /* usercenter_workmanage.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46B91BB577A400C39A22 /* usercenter_workmanage.png */; };
+		B84D46C01BB63D5700C39A22 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46BF1BB63D5700C39A22 /* MainTableViewCell.m */; };
+		B84D46C51BB6413300C39A22 /* gendericon_female.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46C31BB6413300C39A22 /* gendericon_female.png */; };
+		B84D46C61BB6413300C39A22 /* gendericon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46C41BB6413300C39A22 /* gendericon_male.png */; };
+		B84D46CD1BB647C400C39A22 /* priceicon_task.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46CB1BB647C400C39A22 /* priceicon_task.png */; };
+		B84D46CE1BB647C400C39A22 /* priceicon_worker.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46CC1BB647C400C39A22 /* priceicon_worker.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -90,6 +95,12 @@
 		B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_resetpassword.png; sourceTree = "<group>"; };
 		B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_workermanage.png; sourceTree = "<group>"; };
 		B84D46B91BB577A400C39A22 /* usercenter_workmanage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usercenter_workmanage.png; sourceTree = "<group>"; };
+		B84D46BE1BB63D5700C39A22 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewCell.h; path = ../ViewControllers/MainTableViewCell.h; sourceTree = "<group>"; };
+		B84D46BF1BB63D5700C39A22 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewCell.m; path = ../ViewControllers/MainTableViewCell.m; sourceTree = "<group>"; };
+		B84D46C31BB6413300C39A22 /* gendericon_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gendericon_female.png; sourceTree = "<group>"; };
+		B84D46C41BB6413300C39A22 /* gendericon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gendericon_male.png; sourceTree = "<group>"; };
+		B84D46CB1BB647C400C39A22 /* priceicon_task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceicon_task.png; sourceTree = "<group>"; };
+		B84D46CC1BB647C400C39A22 /* priceicon_worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceicon_worker.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -317,6 +328,10 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46CB1BB647C400C39A22 /* priceicon_task.png */,
+				B84D46CC1BB647C400C39A22 /* priceicon_worker.png */,
+				B84D46C31BB6413300C39A22 /* gendericon_female.png */,
+				B84D46C41BB6413300C39A22 /* gendericon_male.png */,
 				B84D46B61BB577A400C39A22 /* usercenter_resetinfo.png */,
 				B84D46B71BB577A400C39A22 /* usercenter_resetpassword.png */,
 				B84D46B81BB577A400C39A22 /* usercenter_workermanage.png */,
@@ -348,6 +363,8 @@
 		B8CD2E991B77550F00960B5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46BE1BB63D5700C39A22 /* MainTableViewCell.h */,
+				B84D46BF1BB63D5700C39A22 /* MainTableViewCell.m */,
 				B8EDCE771B87535900937F76 /* EASingleLineInputView.h */,
 				B8EDCE781B87535900937F76 /* EASingleLineInputView.m */,
 				B8A62AAC1B87FC28004063E8 /* EAButtonView.h */,
@@ -446,10 +463,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B84D46BB1BB577A400C39A22 /* usercenter_resetpassword.png in Resources */,
+				B84D46C51BB6413300C39A22 /* gendericon_female.png in Resources */,
 				B8EDCE5B1B874D7000937F76 /* ExampleDemo in Resources */,
+				B84D46CD1BB647C400C39A22 /* priceicon_task.png in Resources */,
 				B8EDCE6F1B874F1B00937F76 /* icon-120.png in Resources */,
 				B8EDCE701B874F1B00937F76 /* icon-144.png in Resources */,
 				B8EDCE731B874F1B00937F76 /* iTunesArtwork.png in Resources */,
+				B84D46C61BB6413300C39A22 /* gendericon_male.png in Resources */,
 				B84D46A61BB1805000C39A22 /* main_button_background.png in Resources */,
 				B8CD2E5F1B76EFA300960B5E /* PodsUsage in Resources */,
 				B8A62AC31B885566004063E8 /* buttonSelected.png in Resources */,
@@ -479,6 +499,7 @@
 				B84D46AD1BB1817500C39A22 /* main_button_findworker.png in Resources */,
 				B84D46BA1BB577A400C39A22 /* usercenter_resetinfo.png in Resources */,
 				B8EDCE691B874F1B00937F76 /* icon-57.png in Resources */,
+				B84D46CE1BB647C400C39A22 /* priceicon_worker.png in Resources */,
 				B8A62AB11B880A18004063E8 /* buttonBackground_green.png in Resources */,
 				B8A62AC41B885566004063E8 /* buttonUnselected.png in Resources */,
 				B8CD2E6C1B76F07400960B5E /* DevelopStandard in Resources */,
@@ -540,6 +561,7 @@
 				B8EDCE491B801CEB00937F76 /* Task.m in Sources */,
 				B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */,
 				B8CD2E741B76F50A00960B5E /* UIView+Sizes.m in Sources */,
+				B84D46C01BB63D5700C39A22 /* MainTableViewCell.m in Sources */,
 				B8CD2E551B76EE9000960B5E /* DataCenterManager.m in Sources */,
 				B8EDCE4C1B801D7000937F76 /* Worker.m in Sources */,
 				B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */,

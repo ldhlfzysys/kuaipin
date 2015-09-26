@@ -8,6 +8,7 @@
 
 #import "MainTableViewController.h"
 #import "DetailViewController.h"
+#import "MainTableViewCell.h"
 @interface MainTableViewController ()
 @property (nonatomic, retain) EAAreaSelect *leftSelectView;
 @property (nonatomic, retain) EAAreaSelect *midSelectView;
@@ -121,6 +122,7 @@
             NSArray *data = [responseObject objectForKey:@"data"];
             [_datas addObjectsFromArray:data];
             [_mainTable reloadData];
+            NSLog(@"%@",_datas);
         }else{
             [_datas removeAllObjects];
             [_mainTable reloadData];
@@ -203,7 +205,7 @@
 #pragma mark - Table view data source
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 85;
+    return 95;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -223,14 +225,28 @@
         cell = [[MainTableViewCell alloc]init];
     }
     
-    if (_nowType == MainTableViewControllerTypeFindJob){        
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%ld%@",(long)[[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"] integerValue],@"元"];
-        cell.contentLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskInfo"];
-        cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"userName"];
-    }else{
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%ld%@",(long)[[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerAge"]integerValue],@"岁"];
-        cell.contentLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"workerSkill"];
+    if (_nowType == MainTableViewControllerTypeFindJob){//找工作
+        cell.typeLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskType"];
+        cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskEmployer"];
+        cell.ageLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskRegion"];
+        cell.priceLabel.text = [NSString stringWithFormat:@"%@%@",[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"],@"元/小时"];
+        if ([[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskGender"] isEqualToString:@"女"]) {
+            cell.genderImageView.image = [UIImage imageNamed:@"gendericon_female"];
+        }else{
+            cell.genderImageView.image = [UIImage imageNamed:@"gendericon_male"];
+        }
+        cell.priceIconImageView.image = [UIImage imageNamed:@"priceicon_task"];
+    }else{//找人工
+        cell.typeLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"workerMajor"];
         cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"workerName"];
+        cell.ageLabel.text = [NSString stringWithFormat:@"%@%@",[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerAge"],@"岁"];
+        cell.priceLabel.text = [NSString stringWithFormat:@"%@%@",[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerSalary"],@"元/小时"];
+        if ([[[_datas objectAtIndex:indexPath.row] objectForKey:@"workerGender"] isEqualToString:@"女"]) {
+            cell.genderImageView.image = [UIImage imageNamed:@"gendericon_female"];
+        }else{
+            cell.genderImageView.image = [UIImage imageNamed:@"gendericon_male"];
+        }
+        cell.priceIconImageView.image = [UIImage imageNamed:@"priceicon_worker"];
     }
     
     return cell;
@@ -247,34 +263,3 @@
 
 @end
 
-@implementation MainTableViewCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self == [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor whiteColor];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(12, 10, 200, 17)];
-        _nameLabel.textColor = UIColorFromRGB(0x354e65);
-        _nameLabel.font = [UIFont systemFontOfSize:15];
-        [self addSubview:_nameLabel];
-        
-        _distanceLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, 10, 88, 15)];
-        _distanceLabel.textAlignment = NSTextAlignmentRight;
-        _distanceLabel.textColor = UIColorFromRGB(0x354e65);
-        _distanceLabel.font = [UIFont systemFontOfSize:15];
-        [self addSubview:_distanceLabel];
-        
-        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(12, 35, SCREEN_WIDTH - 24, 40)];
-        _contentLabel.textColor = UIColorFromRGB(0x6e6e6e);
-        _contentLabel.font = [UIFont systemFontOfSize:15];
-        [self addSubview:_contentLabel];
-        
-        UIImageView *line = [[UIImageView alloc]initWithFrame:CGRectMake(0, 80, SCREEN_WIDTH, 5)];
-        line.backgroundColor = UIColorFromRGB(0xe8e8e8);
-        [self addSubview:line];
-    }
-    return self;
-}
-
-
-@end

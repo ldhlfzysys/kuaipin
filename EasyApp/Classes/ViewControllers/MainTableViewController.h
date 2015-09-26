@@ -18,8 +18,3 @@ typedef enum{
 - (instancetype)initWithType:(MainTableViewControllerType)type;
 @end
 
-@interface MainTableViewCell : UITableViewCell
-@property (nonatomic,retain) UILabel *nameLabel;
-@property (nonatomic,retain) UILabel *distanceLabel;
-@property (nonatomic,retain) UILabel *contentLabel;
-@end
