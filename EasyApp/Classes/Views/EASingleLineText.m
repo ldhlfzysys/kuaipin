@@ -13,8 +13,8 @@
 - (instancetype)initWithFrame:(CGRect)frame HeadTitle:(NSString *)title Content:(NSString *)content{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        UILabel *headTitleLabel = [self labelWithFrame:CGRectMake(6, 0, 60, frame.size.height)];
-        UILabel *contentLabel = [self labelWithFrame:CGRectMake(78, 0, SCREEN_WIDTH - 90, frame.size.height)];
+        UILabel *headTitleLabel = [self labelWithFrame:CGRectMake(6, 0, 70, frame.size.height)];
+        UILabel *contentLabel = [self labelWithFrame:CGRectMake(88, 0, SCREEN_WIDTH - 90, frame.size.height)];
         headTitleLabel.text = title;
         contentLabel.text = content;
         contentLabel.numberOfLines = 0;

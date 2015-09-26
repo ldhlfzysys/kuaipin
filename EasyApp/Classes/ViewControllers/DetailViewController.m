@@ -38,35 +38,34 @@
         UIScrollView *mainScrollView = [[UIScrollView alloc]init];
         mainScrollView.backgroundColor = UIColorFromRGB(0xe8e8e8);
         [self.view addSubview:mainScrollView];
+        NSLog(@"%@",dict);
         
         
         if (type==MainTableViewControllerTypeFindServer) {//worker
             CGFloat commonLabelHegiht = 50;
-            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"userName"] Content:@""];
+            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"workerName"] Content:[dict objectForKey:@"workerMajor"]];
             [mainScrollView addSubview:_nameLabel];
             
-            _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _nameLabel.EA_Bottom+1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"性别要求" Content:[dict objectForKey:@"taskAddress"]];
+            _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _nameLabel.EA_Bottom+1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"性别要求:" Content:[dict objectForKey:@"workerGender"]];
             [mainScrollView addSubview:_genderLabel];
             
-            _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _genderLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"年龄要求" Content:[dict objectForKey:@"taskAddress"]];
+            _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _genderLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"年龄要求:" Content:[NSString stringWithFormat:@"%@",[dict objectForKey:@"workerAge"]]];
             [mainScrollView addSubview:_ageLabel];
-            
-            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskFee"],@"元"]];
+            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"workerSalary"],@"元"]];
             [mainScrollView addSubview:_priceLabel];
-            
-            _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _priceLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"文化要求" Content:[dict objectForKey:@"taskAddress"]];
+            _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _priceLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"文化要求:" Content:[dict objectForKey:@"workerEducation"]];
             [mainScrollView addSubview:_educationLabel];
             
-            _companyAddressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _educationLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"用人单位" Content:[dict objectForKey:@"userMobile"]];
+            _companyAddressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _educationLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"居住地址:" Content:[dict objectForKey:@"workerAddress"]];
             [mainScrollView addSubview:_companyAddressLabel];
             
-            _aboutmeLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _companyAddressLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"工作内容" Content:[dict objectForKey:@"userMobile"]];
+            _aboutmeLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _companyAddressLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"自我介绍:" Content:[dict objectForKey:@"workerDetail"]];
             [mainScrollView addSubview:_aboutmeLabel];
             
-            _contactLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _aboutmeLabel.EA_Bottom + 1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系人" Content:[dict objectForKey:@"userMobile"]];
+            _contactLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _aboutmeLabel.EA_Bottom + 1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系人:" Content:[dict objectForKey:@"workerName"]];
             [mainScrollView addSubview:_contactLabel];
             
-            _phoneLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _contactLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系电话" Content:[dict objectForKey:@"userMobile"]];
+            _phoneLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _contactLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系电话:" Content:[dict objectForKey:@"workerMobile"]];
             [mainScrollView addSubview:_phoneLabel];
             
             _callButton = [[EAButtonView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 90, _contactLabel.EA_Bottom, commonLabelHegiht, 30) Title:@"打电话" ColorType:BackgroundColorTypeGreen];
@@ -75,41 +74,47 @@
             _callButton.layer.cornerRadius = 8;
             mainScrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, MIN(_phoneLabel.EA_Bottom, SCREEN_HEIGHT_REAL));
             mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, _phoneLabel.EA_Bottom);
+            _phoneNum = [dict objectForKey:@"workerMobile"];
         }else{//task
-
-            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"userName"] Content:@""];
+            CGFloat commonLabelHegiht = 40;
+            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:[dict objectForKey:@"taskType"] Content:@""];
             [mainScrollView addSubview:_nameLabel];
             
-            _addressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"userName"] Content:@""];
+            _addressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _nameLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskRegion"],[dict objectForKey:@"taskRoad"]] Content:@""];
             [mainScrollView addSubview:_addressLabel];
             
-            _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 155, SCREEN_WIDTH, 40) HeadTitle:@"性别要求" Content:[dict objectForKey:@"taskAddress"]];
+            _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _addressLabel.EA_Bottom + 1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"性别要求:" Content:[dict objectForKey:@"taskGender"]];
             [mainScrollView addSubview:_genderLabel];
             
-            _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 155, SCREEN_WIDTH, 40) HeadTitle:@"年龄要求" Content:[dict objectForKey:@"taskAddress"]];
+            _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _genderLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"年龄要求:" Content:[dict objectForKey:@"taskAddress"]];
             [mainScrollView addSubview:_ageLabel];
 
-            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 110, SCREEN_WIDTH, 40) HeadTitle:@"提供薪酬" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskFee"],@"元"]];
+            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskFee"],@"元"]];
             [mainScrollView addSubview:_priceLabel];
             
-            _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 155, SCREEN_WIDTH, 40) HeadTitle:@"文化要求" Content:[dict objectForKey:@"taskAddress"]];
+            _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _priceLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"文化要求:" Content:[dict objectForKey:@"taskEducation"]];
             [mainScrollView addSubview:_educationLabel];
             
-            _companyAddressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 40) HeadTitle:@"用人单位" Content:[dict objectForKey:@"userMobile"]];
+            _companyAddressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _educationLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"用人单位:" Content:[dict objectForKey:@"taskEmployer"]];
             [mainScrollView addSubview:_companyAddressLabel];
-            
-            _aboutmeLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 40) HeadTitle:@"工作内容" Content:[dict objectForKey:@"userMobile"]];
+            _aboutmeLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _companyAddressLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"工作内容:" Content:[dict objectForKey:@"taskInfo"]];
             [mainScrollView addSubview:_aboutmeLabel];
             
-            _contactLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 40) HeadTitle:@"联系人" Content:[dict objectForKey:@"userMobile"]];
+            _contactLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _aboutmeLabel.EA_Bottom+1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系人:" Content:[dict objectForKey:@"userName"]];
             [mainScrollView addSubview:_contactLabel];
             
-            _phoneLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 40) HeadTitle:@"联系电话" Content:[dict objectForKey:@"userMobile"]];
+            _phoneLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _contactLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"联系电话:" Content:[dict objectForKey:@"userMobile"]];
             [mainScrollView addSubview:_phoneLabel];
             
-            _callButton = [[EAButtonView alloc]initWithFrame:CGRectMake(15, 260, SCREEN_WIDTH - 30, 30) Title:@"打电话" ColorType:BackgroundColorTypeGreen];
+            _callButton = [[EAButtonView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 90, _priceLabel.EA_Top, 60, 30) Title:@"打电话" ColorType:BackgroundColorTypeGreen];
+            _callButton.EA_CenterY = _phoneLabel.EA_CenterY;
+            _callButton.layer.masksToBounds = YES;
+            _callButton.layer.cornerRadius = 8;
+            mainScrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, MIN(_phoneLabel.EA_Bottom, SCREEN_HEIGHT_REAL));
+            mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, _phoneLabel.EA_Bottom);
+            _phoneNum = [dict objectForKey:@"userMobile"];
         }
-        _phoneNum = [dict objectForKey:@"userMobile"];
+        
         [mainScrollView addSubview:_callButton];
         __block DetailViewController *blockSelf = self;
         [_callButton setEAButtonClickBlock:^(){
