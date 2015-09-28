@@ -9,6 +9,7 @@
 #import "MainTableViewController.h"
 #import "DetailViewController.h"
 #import "MainTableViewCell.h"
+#import "SearchViewCon.h"
 @interface MainTableViewController ()
 @property (nonatomic, retain) EAAreaSelect *leftSelectView;
 @property (nonatomic, retain) EAAreaSelect *midSelectView;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) UITableView *mainTable;
 @property (nonatomic, assign) int pageNum;
 @property (nonatomic, retain) NSString *APIAddress;
+@property(nonatomic,strong)UIButton *searchBtn;
 @end
 
 @implementation MainTableViewController
@@ -34,7 +36,6 @@
         
         switch (_nowType) {
             case MainTableViewControllerTypeFindJob:{//找工作
-                self.navigationItem.titleView = [Tools getTitleLab:@"找工作"];
                 _leftSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 42)];
                 _leftSelectView.delegate = self;
                 [self.view addSubview:_leftSelectView];
@@ -69,7 +70,6 @@
                 _midSelectView.areaLabel.text = @"性别";
                 _midSelectView.areaArray = [[NSArray alloc]initWithObjects:@"不限",@"男",@"女", nil];
                 _rightSelectView.areaLabel.text = @"服务区域";
-                self.navigationItem.titleView = [Tools getTitleLab:@"找服务"];
                 _leftSelectView.areaLabel.text = @"年龄段";
                 _leftSelectView.areaArray = [[NSArray alloc]initWithObjects:@"不限",@"18~25",@"26~35",@"35以上", nil];
                 _APIAddress = APIfindworker;
@@ -105,10 +105,25 @@
         
         _pageNum = 1;
         [_mainTable.header beginRefreshing];
+        //搜索框
+        _searchBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, (46-27.5)/2, 254, 27.5)];
+        _searchBtn.EA_CenterX = SCREEN_WIDTH/2 + 10;
+        [_searchBtn setBackgroundImage:[UIImage imageNamed:@"searchbar_bg"] forState:UIControlStateNormal];
+        [_searchBtn setBackgroundImage:[UIImage imageNamed:@"searchbar_bg"] forState:UIControlStateHighlighted];
+        [_searchBtn addTarget:self action:@selector(searchBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        UILabel *searchtitle = [[UILabel alloc]initWithFrame:CGRectMake(35, 7.5, 120, 12)];
+        searchtitle.font = [UIFont systemFontOfSize:12];
+        searchtitle.text = @"请输入商户名、地点";
+        searchtitle.textColor = [UIColor blackColor];
+        [_searchBtn addSubview:searchtitle];
     }
     return self;
 }
 
+- (void)searchBtnClick{
+    SearchViewCon *searchVC = [[SearchViewCon alloc]initWithType:_nowType];
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
 - (void)contentDidChange{
     [_mainTable.header beginRefreshing];
 }
@@ -122,7 +137,6 @@
             NSArray *data = [responseObject objectForKey:@"data"];
             [_datas addObjectsFromArray:data];
             [_mainTable reloadData];
-            NSLog(@"%@",_datas);
         }else{
             [_datas removeAllObjects];
             [_mainTable reloadData];
@@ -261,5 +275,13 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+//    [self.navigationController.view addSubview:_searchBtn];
+    [self.navigationController.navigationBar addSubview:_searchBtn];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [_searchBtn removeFromSuperview];
+}
 @end
 

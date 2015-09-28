@@ -21,8 +21,13 @@
 //劳工接口
 #define APIaddworker               APIURL(@"worker/add.htm")
 #define APIfindworker              APIURL(@"worker/find.htm")
+#define APIsearchworker             APIURL(@"worker/serachWorker.htm")
+#define APIdeleteworker            APIURL(@"worker/delete.htm")
 //任务接口
 #define APIaddtask                 APIURL(@"task/add.htm")
 #define APIfindtask                APIURL(@"task/find.htm")
+#define APIsearchtask              APIURL(@"task/searchTask.htm")
+#define APIdeletetask               APIURL(@"task/delete.htm")
+
 
 #endif

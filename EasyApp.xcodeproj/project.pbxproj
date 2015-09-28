@@ -26,6 +26,9 @@
 		B84D46C61BB6413300C39A22 /* gendericon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46C41BB6413300C39A22 /* gendericon_male.png */; };
 		B84D46CD1BB647C400C39A22 /* priceicon_task.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46CB1BB647C400C39A22 /* priceicon_task.png */; };
 		B84D46CE1BB647C400C39A22 /* priceicon_worker.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46CC1BB647C400C39A22 /* priceicon_worker.png */; };
+		B84D46D61BB64BA900C39A22 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46D11BB64BA900C39A22 /* SearchView.m */; };
+		B84D46D71BB64BA900C39A22 /* SearchViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46D31BB64BA900C39A22 /* SearchViewCon.m */; };
+		B84D46DF1BB6523C00C39A22 /* searchbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -101,6 +104,11 @@
 		B84D46C41BB6413300C39A22 /* gendericon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gendericon_male.png; sourceTree = "<group>"; };
 		B84D46CB1BB647C400C39A22 /* priceicon_task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceicon_task.png; sourceTree = "<group>"; };
 		B84D46CC1BB647C400C39A22 /* priceicon_worker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceicon_worker.png; sourceTree = "<group>"; };
+		B84D46D01BB64BA900C39A22 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		B84D46D11BB64BA900C39A22 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		B84D46D21BB64BA900C39A22 /* SearchViewCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewCon.h; sourceTree = "<group>"; };
+		B84D46D31BB64BA900C39A22 /* SearchViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewCon.m; sourceTree = "<group>"; };
+		B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbar_bg.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -198,6 +206,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B84D46CF1BB64B9E00C39A22 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B84D46D01BB64BA900C39A22 /* SearchView.h */,
+				B84D46D11BB64BA900C39A22 /* SearchView.m */,
+				B84D46D21BB64BA900C39A22 /* SearchViewCon.h */,
+				B84D46D31BB64BA900C39A22 /* SearchViewCon.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		B8B394091B5FBE09005CE7A3 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +262,7 @@
 		B8CD2E4C1B76EE2B00960B5E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46CF1BB64B9E00C39A22 /* Search */,
 				B8CD2E511B76EE7200960B5E /* ViewControllers */,
 				B8CD2E991B77550F00960B5E /* Views */,
 				B8CD2E4E1B76EE7200960B5E /* Models */,
@@ -328,6 +348,7 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */,
 				B84D46CB1BB647C400C39A22 /* priceicon_task.png */,
 				B84D46CC1BB647C400C39A22 /* priceicon_worker.png */,
 				B84D46C31BB6413300C39A22 /* gendericon_female.png */,
@@ -467,6 +488,7 @@
 				B8EDCE5B1B874D7000937F76 /* ExampleDemo in Resources */,
 				B84D46CD1BB647C400C39A22 /* priceicon_task.png in Resources */,
 				B8EDCE6F1B874F1B00937F76 /* icon-120.png in Resources */,
+				B84D46DF1BB6523C00C39A22 /* searchbar_bg.png in Resources */,
 				B8EDCE701B874F1B00937F76 /* icon-144.png in Resources */,
 				B8EDCE731B874F1B00937F76 /* iTunesArtwork.png in Resources */,
 				B84D46C61BB6413300C39A22 /* gendericon_male.png in Resources */,
@@ -548,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84D46D61BB64BA900C39A22 /* SearchView.m in Sources */,
 				B8CD2E641B76EFAB00960B5E /* AppUser.m in Sources */,
 				B8EDCE791B87535900937F76 /* EASingleLineInputView.m in Sources */,
 				B84D46B51BB573AF00C39A22 /* UserCenterViewController.m in Sources */,
@@ -564,6 +587,7 @@
 				B84D46C01BB63D5700C39A22 /* MainTableViewCell.m in Sources */,
 				B8CD2E551B76EE9000960B5E /* DataCenterManager.m in Sources */,
 				B8EDCE4C1B801D7000937F76 /* Worker.m in Sources */,
+				B84D46D71BB64BA900C39A22 /* SearchViewCon.m in Sources */,
 				B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */,
 				B8EDCE4F1B801DED00937F76 /* EABaseModel.m in Sources */,
 				B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */,

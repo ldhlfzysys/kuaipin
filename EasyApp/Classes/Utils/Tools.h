@@ -11,6 +11,11 @@ typedef enum {
     NavTypeMainPage = 0,
 }NavType;
 
+typedef enum{
+    MainTableViewControllerTypeFindJob = 0,
+    MainTableViewControllerTypeFindServer = 1,
+}MainTableViewControllerType;
+
 @interface Tools : NSObject
 +(UINavigationController *)getNavByType:(NavType)type controller:(UIViewController *)con;
 + (UILabel *)getTitleLab:(NSString *)title;
