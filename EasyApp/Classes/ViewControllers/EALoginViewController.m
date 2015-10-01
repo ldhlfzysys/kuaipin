@@ -52,10 +52,16 @@
                 [user userFromDictionary:dict];
                 if (user) {
                     [DataCenterManager sharedManager].currentUser = user;
-                    [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"appuser"];
+                    NSMutableDictionary *saveDict = [@{} mutableCopy];
+                    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                        if (obj != [NSNull null]) {
+                            [saveDict setValue:obj forKey:key];
+                        }
+                    }];
+                    [[NSUserDefaults standardUserDefaults] setObject:saveDict forKey:@"appuser"];
                 }
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [blockSelf.navigationController popToRootViewControllerAnimated:YES];
             }else{
                 [SVProgressHUD showErrorWithStatus:@"用户名或密码错误"];
             }

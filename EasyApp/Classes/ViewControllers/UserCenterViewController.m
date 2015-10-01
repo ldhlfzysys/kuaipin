@@ -7,7 +7,7 @@
 //
 
 #import "UserCenterViewController.h"
-
+#import "ManageTableViewController.h"
 @interface UserCenterViewController ()
 @property (nonatomic, strong) UserCenterLabelView *resetInfo;
 @property (nonatomic, strong) UserCenterLabelView *resetPassoword;
@@ -30,13 +30,13 @@
         [_resetInfo addTarget:self action:@selector(resetInfoClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_resetInfo];
         _resetPassoword = [[UserCenterLabelView alloc]initWithFrame:CGRectMake(0, 60, SCREEN_WIDTH, 40) Title:@"修改密码" Image:@"usercenter_resetpassword"];
-        [_resetInfo addTarget:self action:@selector(resetInfoClick) forControlEvents:UIControlEventTouchUpInside];
+        [_resetPassoword addTarget:self action:@selector(resetPassowordClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_resetPassoword];
         _workManage = [[UserCenterLabelView alloc]initWithFrame:CGRectMake(0, 110, SCREEN_WIDTH, 40) Title:@"工作管理" Image:@"usercenter_workmanage"];
-        [_resetInfo addTarget:self action:@selector(resetInfoClick) forControlEvents:UIControlEventTouchUpInside];
+        [_workManage addTarget:self action:@selector(workManageClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_workManage];
         _workerManage = [[UserCenterLabelView alloc]initWithFrame:CGRectMake(0, 152, SCREEN_WIDTH, 40) Title:@"劳工管理" Image:@"usercenter_workermanage"];
-        [_resetInfo addTarget:self action:@selector(resetInfoClick) forControlEvents:UIControlEventTouchUpInside];
+        [_workerManage addTarget:self action:@selector(workerManageClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_workerManage];
     }
     return self;
@@ -51,11 +51,13 @@
 }
 
 - (void)workManageClick{
-    
+    ManageTableViewController *manageVC = [[ManageTableViewController alloc]initWithType:MainTableViewControllerTypeFindJob];
+    [self.navigationController pushViewController:manageVC animated:YES];
 }
 
 - (void)workerManageClick{
-    
+    ManageTableViewController *manageVC = [[ManageTableViewController alloc]initWithType:MainTableViewControllerTypeFindServer];
+    [self.navigationController pushViewController:manageVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

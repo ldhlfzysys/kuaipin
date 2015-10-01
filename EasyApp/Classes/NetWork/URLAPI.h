@@ -18,6 +18,8 @@
 #define APIregister                APIURL(@"user/register.htm")
 #define APIlogin                   APIURL(@"user/login.htm")
 #define APIupdate                  APIURL(@"user/update.htm")
+#define APIFindMyTask               APIURL(@"user/findMyTask.htm")
+#define APIFindMyWorker            APIURL(@"user/findMyWorker")
 //劳工接口
 #define APIaddworker               APIURL(@"worker/add.htm")
 #define APIfindworker              APIURL(@"worker/find.htm")
@@ -26,7 +28,7 @@
 //任务接口
 #define APIaddtask                 APIURL(@"task/add.htm")
 #define APIfindtask                APIURL(@"task/find.htm")
-#define APIsearchtask              APIURL(@"task/searchTask.htm")
+#define APIsearchtask              APIURL(@"task/serachTask.htm")
 #define APIdeletetask               APIURL(@"task/delete.htm")
 
 

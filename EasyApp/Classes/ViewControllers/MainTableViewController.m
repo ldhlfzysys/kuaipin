@@ -124,6 +124,7 @@
     SearchViewCon *searchVC = [[SearchViewCon alloc]initWithType:_nowType];
     [self.navigationController pushViewController:searchVC animated:YES];
 }
+
 - (void)contentDidChange{
     [_mainTable.header beginRefreshing];
 }

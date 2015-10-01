@@ -29,6 +29,8 @@
 		B84D46D61BB64BA900C39A22 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46D11BB64BA900C39A22 /* SearchView.m */; };
 		B84D46D71BB64BA900C39A22 /* SearchViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46D31BB64BA900C39A22 /* SearchViewCon.m */; };
 		B84D46DF1BB6523C00C39A22 /* searchbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */; };
+		B84D46E21BB981A900C39A22 /* ManageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46E11BB981A900C39A22 /* ManageTableViewController.m */; };
+		B84D46E41BB989BE00C39A22 /* editbutton_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46E31BB989BE00C39A22 /* editbutton_bg.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -109,6 +111,9 @@
 		B84D46D21BB64BA900C39A22 /* SearchViewCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewCon.h; sourceTree = "<group>"; };
 		B84D46D31BB64BA900C39A22 /* SearchViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewCon.m; sourceTree = "<group>"; };
 		B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbar_bg.png; sourceTree = "<group>"; };
+		B84D46E01BB981A900C39A22 /* ManageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageTableViewController.h; sourceTree = "<group>"; };
+		B84D46E11BB981A900C39A22 /* ManageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageTableViewController.m; sourceTree = "<group>"; };
+		B84D46E31BB989BE00C39A22 /* editbutton_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton_bg.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -341,6 +346,8 @@
 				B89EC3711B89E9DA006A0410 /* DetailViewController.m */,
 				B84D46B31BB573AF00C39A22 /* UserCenterViewController.h */,
 				B84D46B41BB573AF00C39A22 /* UserCenterViewController.m */,
+				B84D46E01BB981A900C39A22 /* ManageTableViewController.h */,
+				B84D46E11BB981A900C39A22 /* ManageTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46E31BB989BE00C39A22 /* editbutton_bg.png */,
 				B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */,
 				B84D46CB1BB647C400C39A22 /* priceicon_task.png */,
 				B84D46CC1BB647C400C39A22 /* priceicon_worker.png */,
@@ -508,6 +516,7 @@
 				B84D46AF1BB1817500C39A22 /* main_button_registerworker.png in Resources */,
 				B84D46A41BB17E9900C39A22 /* main_background.png in Resources */,
 				B84D46AE1BB1817500C39A22 /* main_button_issue.png in Resources */,
+				B84D46E41BB989BE00C39A22 /* editbutton_bg.png in Resources */,
 				B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */,
 				B8CD2E901B7705CB00960B5E /* Default-568h@2x.png in Resources */,
 				B84D46BD1BB577A400C39A22 /* usercenter_workmanage.png in Resources */,
@@ -578,6 +587,7 @@
 				B8CD2E8E1B7700AC00960B5E /* Tools.m in Sources */,
 				B8A62ACA1B887530004063E8 /* MainTableViewController.m in Sources */,
 				B8CD2E591B76EEF300960B5E /* NetWorkManager.m in Sources */,
+				B84D46E21BB981A900C39A22 /* ManageTableViewController.m in Sources */,
 				B8CD2E7F1B76FBE500960B5E /* MainViewController.m in Sources */,
 				B8A62ABE1B88413D004063E8 /* RegisterWorkerViewController.m in Sources */,
 				B8A62AC71B885BBC004063E8 /* IssueTaskViewController.m in Sources */,
