@@ -18,6 +18,7 @@
 #define APIregister                APIURL(@"user/register.htm")
 #define APIlogin                   APIURL(@"user/login.htm")
 #define APIupdate                  APIURL(@"user/update.htm")
+#define APIupdatePassword           APIURL(@"user/updatePassword.htm")
 #define APIFindMyTask               APIURL(@"user/findMyTask.htm")
 #define APIFindMyWorker            APIURL(@"user/findMyWorker")
 //劳工接口

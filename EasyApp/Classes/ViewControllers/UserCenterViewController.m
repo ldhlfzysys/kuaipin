@@ -8,6 +8,7 @@
 
 #import "UserCenterViewController.h"
 #import "ManageTableViewController.h"
+#import "ResetInfoViewController.h"
 @interface UserCenterViewController ()
 @property (nonatomic, strong) UserCenterLabelView *resetInfo;
 @property (nonatomic, strong) UserCenterLabelView *resetPassoword;
@@ -43,11 +44,13 @@
 }
 
 - (void)resetInfoClick{
-    
+    ResetInfoViewController *resetVC = [[ResetInfoViewController alloc]initWithType:ResetInfoTypeUserInfo];
+    [self.navigationController pushViewController:resetVC animated:YES];
 }
 
 - (void)resetPassowordClick{
-    
+    ResetInfoViewController *resetVC = [[ResetInfoViewController alloc]initWithType:ResetInfoTypePassword];
+    [self.navigationController pushViewController:resetVC animated:YES];
 }
 
 - (void)workManageClick{

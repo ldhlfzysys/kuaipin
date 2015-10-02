@@ -31,6 +31,7 @@
 		B84D46DF1BB6523C00C39A22 /* searchbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */; };
 		B84D46E21BB981A900C39A22 /* ManageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46E11BB981A900C39A22 /* ManageTableViewController.m */; };
 		B84D46E41BB989BE00C39A22 /* editbutton_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46E31BB989BE00C39A22 /* editbutton_bg.png */; };
+		B84D46E71BBE0E4B00C39A22 /* ResetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46E61BBE0E4B00C39A22 /* ResetInfoViewController.m */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -114,6 +115,8 @@
 		B84D46E01BB981A900C39A22 /* ManageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageTableViewController.h; sourceTree = "<group>"; };
 		B84D46E11BB981A900C39A22 /* ManageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageTableViewController.m; sourceTree = "<group>"; };
 		B84D46E31BB989BE00C39A22 /* editbutton_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton_bg.png; sourceTree = "<group>"; };
+		B84D46E51BBE0E4B00C39A22 /* ResetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetInfoViewController.h; sourceTree = "<group>"; };
+		B84D46E61BBE0E4B00C39A22 /* ResetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetInfoViewController.m; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 				B84D46B41BB573AF00C39A22 /* UserCenterViewController.m */,
 				B84D46E01BB981A900C39A22 /* ManageTableViewController.h */,
 				B84D46E11BB981A900C39A22 /* ManageTableViewController.m */,
+				B84D46E51BBE0E4B00C39A22 /* ResetInfoViewController.h */,
+				B84D46E61BBE0E4B00C39A22 /* ResetInfoViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				B8CD2E641B76EFAB00960B5E /* AppUser.m in Sources */,
 				B8EDCE791B87535900937F76 /* EASingleLineInputView.m in Sources */,
 				B84D46B51BB573AF00C39A22 /* UserCenterViewController.m in Sources */,
+				B84D46E71BBE0E4B00C39A22 /* ResetInfoViewController.m in Sources */,
 				B8CD2E601B76EFA300960B5E /* NSDictionary+Utils.m in Sources */,
 				B8CD2E8E1B7700AC00960B5E /* Tools.m in Sources */,
 				B8A62ACA1B887530004063E8 /* MainTableViewController.m in Sources */,
