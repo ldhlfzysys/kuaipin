@@ -10,6 +10,8 @@
 #import "EASingleLineInputView.h"
 #import "EAButtonView.h"
 
+#define NUMBERS @"0123456789"
+
 @interface IssueTaskViewController ()
 @property (nonatomic, retain) EASingleLineInputView *workerTypeInput;
 @property (nonatomic, retain) EASingleLineInputView *genderInput;
@@ -45,8 +47,12 @@
     [self.view addSubview:_genderInput];
 
     _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 109, SCREEN_WIDTH - 24, 30) Title:@"提供薪酬" Placeholder:@"请输入提供的薪资"];
+    _priceInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _priceInput.contentTextField.delegate = self;
     [self.view addSubview:_priceInput];
-    _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 151, SCREEN_WIDTH - 24, 30) Title:@"文化要求" Placeholder:@"请选择文化程度"];
+    _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 151, SCREEN_WIDTH - 24, 30) Title:@"文化要求" Placeholder:@""];
+    _educatedInput.needAreaSelect = YES;
+    _educatedInput.areaSelect.areaArray = [[NSArray alloc]initWithObjects:@"小学",@"初中",@"高中",@"专科",@"本科",@"研究生",@"博士", nil];
     [self.view addSubview:_educatedInput];
     _addressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"用人单位" Placeholder:@"请输入单位地址"];
     [self.view addSubview:_addressInput];
@@ -109,5 +115,30 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
+- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string
+{
+    
+    NSCharacterSet*cs;
+    cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
+    NSString*filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    BOOL basicTest = [string isEqualToString:filtered];
+    if(!basicTest) {
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                       message:@"请输入数字"
+                                                      delegate:nil
+                                             cancelButtonTitle:@"确定"
+                                             otherButtonTitles:nil];
+        
+        [alert show];
+        return NO;
+        
+    }
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
 
 @end

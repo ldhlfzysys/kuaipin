@@ -63,7 +63,7 @@
             }
                 break;
             case MainTableViewControllerTypeFindServer:{
-                _APIAddress = APIfindworker;
+                _APIAddress = APIFindMyWorker;
                 _APIDeleteAddress = APIdeleteworker;
                 self.navigationItem.titleView = [Tools getTitleLab:@"劳工管理"];
             }
@@ -196,6 +196,7 @@
         cell.typeLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskType"];
         cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskEmployer"];
         cell.ageLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskRegion"];
+        cell.addressImageView.image = [UIImage imageNamed:@"address_icon_gray"];
         cell.priceLabel.text = [NSString stringWithFormat:@"%@%@",[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"],@"元/小时"];
         if ([[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskGender"] isEqualToString:@"女"]) {
             cell.genderImageView.image = [UIImage imageNamed:@"gendericon_female"];

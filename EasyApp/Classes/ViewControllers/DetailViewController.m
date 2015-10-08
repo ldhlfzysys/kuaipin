@@ -42,7 +42,8 @@
         
         if (type==MainTableViewControllerTypeFindServer) {//worker
             CGFloat commonLabelHegiht = 50;
-            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"workerName"] Content:[dict objectForKey:@"workerMajor"]];
+            _nameLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60) HeadTitle:[dict objectForKey:@"workerMajor"] Content:[dict objectForKey:@"workerName"]];
+            _nameLabel.headTitleLabel.textColor = UIColorFromRGB(0x0fa079);
             [mainScrollView addSubview:_nameLabel];
             
             _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _nameLabel.EA_Bottom+1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"性别要求:" Content:[dict objectForKey:@"workerGender"]];
@@ -50,12 +51,14 @@
             
             _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _genderLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"年龄要求:" Content:[NSString stringWithFormat:@"%@",[dict objectForKey:@"workerAge"]]];
             [mainScrollView addSubview:_ageLabel];
-            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"workerSalary"],@"元"]];
+            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"workerSalary"],@"元/小时"]];
             [mainScrollView addSubview:_priceLabel];
             _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _priceLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"文化要求:" Content:[dict objectForKey:@"workerEducation"]];
             [mainScrollView addSubview:_educationLabel];
             
             _companyAddressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _educationLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"居住地址:" Content:[dict objectForKey:@"workerAddress"]];
+            _companyAddressLabel.addressImage.image = [UIImage imageNamed:@"address_icon"];
+            [_companyAddressLabel.addressImage setNeedsDisplay];
             [mainScrollView addSubview:_companyAddressLabel];
             
             _aboutmeLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _companyAddressLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"自我介绍:" Content:[dict objectForKey:@"workerDetail"]];
@@ -80,6 +83,8 @@
             [mainScrollView addSubview:_nameLabel];
             
             _addressLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _nameLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskRegion"],[dict objectForKey:@"taskRoad"]] Content:@""];
+            _addressLabel.headTitleLabel.EA_Width = 280;
+            _addressLabel.contentLabel.hidden = YES;
             [mainScrollView addSubview:_addressLabel];
             
             _genderLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _addressLabel.EA_Bottom + 1, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"性别要求:" Content:[dict objectForKey:@"taskGender"]];

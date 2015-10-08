@@ -58,8 +58,8 @@
                 [dict setObject:blockSelf.userName.contentTextField.text forKey:@"password"];
             }else{
                 [dict setObject:user.uuid forKey:@"uuid"];
-                [dict setObject:blockSelf.userName.contentTextField.text forKey:@"userName"];
-                [dict setObject:blockSelf.gender.genderSelectButton.gender forKey:@"gender"];
+                [dict setObject:blockSelf.userName.contentTextField.text forKey:@"name"];
+                [dict setObject:blockSelf.gender.genderSelectButton.genderChinese forKey:@"gender"];
             }
             NSString *APIAddress = @"";
             if (type == ResetInfoTypePassword) {

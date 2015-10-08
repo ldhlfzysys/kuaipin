@@ -15,4 +15,6 @@
 @property (nonatomic,retain) UILabel *ageLabel;
 @property (nonatomic, strong) UIImageView *genderImageView;
 @property (nonatomic, strong) UIImageView *priceIconImageView;
+
+@property (nonatomic,strong) UIImageView *addressImageView;
 @end

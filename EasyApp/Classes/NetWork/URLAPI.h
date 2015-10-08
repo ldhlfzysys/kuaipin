@@ -20,7 +20,7 @@
 #define APIupdate                  APIURL(@"user/update.htm")
 #define APIupdatePassword           APIURL(@"user/updatePassword.htm")
 #define APIFindMyTask               APIURL(@"user/findMyTask.htm")
-#define APIFindMyWorker            APIURL(@"user/findMyWorker")
+#define APIFindMyWorker            APIURL(@"user/findMyWorker.htm")
 //劳工接口
 #define APIaddworker               APIURL(@"worker/add.htm")
 #define APIfindworker              APIURL(@"worker/find.htm")

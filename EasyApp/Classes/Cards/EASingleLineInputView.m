@@ -142,10 +142,12 @@ typedef enum {
         _maleButton.selected = YES;
         _femaleButton.selected = NO;
         _gender = @"1";
+        _genderChinese = @"男";
     }else{
         _maleButton.selected = NO;
         _femaleButton.selected = YES;
         _gender = @"0";
+        _genderChinese = @"女";
     }
 }
 @end

@@ -58,15 +58,16 @@
             }
                 break;
             case MainTableViewControllerTypeFindServer:{
-                _leftSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3, 42)];
+                _leftSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, 42)];
                 _leftSelectView.delegate = self;
                 [self.view addSubview:_leftSelectView];
-                _midSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/3, 0, SCREEN_WIDTH/3, 42)];
+                _midSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, 42)];
                 _midSelectView.delegate = self;
                 [self.view addSubview:_midSelectView];
                 _rightSelectView = [[EAAreaSelect alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*2/3, 0, SCREEN_WIDTH/3, 42)];
                 _rightSelectView.delegate = self;
                 [self.view addSubview:_rightSelectView];
+                _rightSelectView.hidden = YES;
                 _midSelectView.areaLabel.text = @"性别";
                 _midSelectView.areaArray = [[NSArray alloc]initWithObjects:@"不限",@"男",@"女", nil];
                 _rightSelectView.areaLabel.text = @"服务区域";
@@ -74,13 +75,9 @@
                 _leftSelectView.areaArray = [[NSArray alloc]initWithObjects:@"不限",@"18~25",@"26~35",@"35以上", nil];
                 _APIAddress = APIfindworker;
                 //画线
-                UIImageView *line1 = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/3, 0, 1, 42)];
+                UIImageView *line1 = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2, 0, 1, 42)];
                 line1.backgroundColor = UIColorFromRGB(0xe8e8e8);
                 [self.view addSubview:line1];
-                
-                UIImageView *line2 = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*2/3, 0, 1, 42)];
-                line2.backgroundColor = UIColorFromRGB(0xe8e8e8);
-                [self.view addSubview:line2];
             }
                 break;
                 
@@ -244,6 +241,7 @@
         cell.typeLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskType"];
         cell.nameLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskEmployer"];
         cell.ageLabel.text = [[_datas objectAtIndex:indexPath.row] objectForKey:@"taskRegion"];
+        cell.addressImageView.image = [UIImage imageNamed:@"address_icon_gray"];
         cell.priceLabel.text = [NSString stringWithFormat:@"%@%@",[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskFee"],@"元/小时"];
         if ([[[_datas objectAtIndex:indexPath.row] objectForKey:@"taskGender"] isEqualToString:@"女"]) {
             cell.genderImageView.image = [UIImage imageNamed:@"gendericon_female"];

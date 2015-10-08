@@ -31,7 +31,7 @@
 }
 
 - (CGFloat)EA_Right{
-    return self.frame.origin.y + self.frame.size.width;
+    return self.frame.origin.x + self.frame.size.width;
 }
 
 - (void)setEA_Right:(CGFloat)right{

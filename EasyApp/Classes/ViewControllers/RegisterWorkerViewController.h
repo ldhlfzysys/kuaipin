@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterWorkerViewController : UIViewController
+@interface RegisterWorkerViewController : UIViewController<UITextFieldDelegate>
 
 @end

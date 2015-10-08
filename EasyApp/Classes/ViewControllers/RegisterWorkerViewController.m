@@ -9,6 +9,9 @@
 #import "RegisterWorkerViewController.h"
 #import "EASingleLineInputView.h"
 #import "EAButtonView.h"
+
+#define NUMBERS @"0123456789"
+
 @interface RegisterWorkerViewController ()
 @property (nonatomic, retain) EASingleLineInputView *workerTypeInput;
 @property (nonatomic, retain) EASingleLineInputView *nameInput;
@@ -48,10 +51,16 @@
     _genderInput.needGenderSelectButton = YES;
     [self.view addSubview:_genderInput];
     _ageInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 151, SCREEN_WIDTH - 24, 30) Title:@"年龄" Placeholder:@"请输入您的年龄"];
+    _ageInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _ageInput.contentTextField.delegate = self;
     [self.view addSubview:_ageInput];
     _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"薪酬要求" Placeholder:@"请输入期望薪资"];
+    _priceInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _priceInput.contentTextField.delegate = self;
     [self.view addSubview:_priceInput];
     _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 234, SCREEN_WIDTH - 24, 30) Title:@"文化程度" Placeholder:@"请选择文化程度"];
+    _educatedInput.needAreaSelect = YES;
+    _educatedInput.areaSelect.areaArray = [[NSArray alloc]initWithObjects:@"小学",@"初中",@"高中",@"专科",@"本科",@"研究生",@"博士", nil];
     [self.view addSubview:_educatedInput];
     _addressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 276, SCREEN_WIDTH - 24, 30) Title:@"居住地" Placeholder:@"请选择居住地址"];
     _addressInput.needAreaSelect = YES;
@@ -59,11 +68,11 @@
     _aboutmeInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 318, SCREEN_WIDTH - 24, 30) Title:@"自我介绍" Placeholder:@"请用简短的文字介绍自己"];
     [self.view addSubview:_aboutmeInput];
     _contactInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"联系人" Placeholder:@"请输入联系人姓名"];
-    [self.view addSubview:_contactInput];
+    //[self.view addSubview:_contactInput];
     _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 402, SCREEN_WIDTH - 24, 30) Title:@"联系电话" Placeholder:@"请输入联系人电话"];
-    [self.view addSubview:_phoneInput];
+    //[self.view addSubview:_phoneInput];
     
-    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 452, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
+    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 368, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
     [self.view addSubview:_confirmButton];
     
     __block RegisterWorkerViewController *blockSelf = self;
@@ -82,7 +91,7 @@
                               blockSelf.aboutmeInput.contentTextField.text,@"workerDetail",
                               blockSelf.addressInput.areaSelect.areaLabel.text,@"workerAddress",
                               blockSelf.priceInput.contentTextField.text,@"workerSalary",
-                              blockSelf.phoneInput.contentTextField.text,@"workerMobile",nil];
+                              user.mobile,@"workerMobile",nil];
         [[NetWorkManager sharedManager]sendGetRequest:APIaddworker param:dict CallBackHandle:^(id responseObject){
             if ([[responseObject objectForKey:@"status"] integerValue] == 0) {
                 [SVProgressHUD showSuccessWithStatus:@"登记成功"];
@@ -104,6 +113,32 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string
+{
+    
+    NSCharacterSet*cs;
+    cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
+    NSString*filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    BOOL basicTest = [string isEqualToString:filtered];
+    if(!basicTest) {
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                        message:@"请输入数字"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        return NO;
+        
+    }
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
 /*

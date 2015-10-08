@@ -38,6 +38,7 @@
 @property (nonatomic, retain)UIButton *maleButton;
 @property (nonatomic, retain)UIButton *femaleButton;
 @property (nonatomic, retain)NSString *gender;
+@property (nonatomic, strong)NSString *genderChinese;
 
 @end
 

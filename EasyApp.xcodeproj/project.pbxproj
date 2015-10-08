@@ -32,6 +32,8 @@
 		B84D46E21BB981A900C39A22 /* ManageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46E11BB981A900C39A22 /* ManageTableViewController.m */; };
 		B84D46E41BB989BE00C39A22 /* editbutton_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46E31BB989BE00C39A22 /* editbutton_bg.png */; };
 		B84D46E71BBE0E4B00C39A22 /* ResetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84D46E61BBE0E4B00C39A22 /* ResetInfoViewController.m */; };
+		B84D46E91BC69EC000C39A22 /* address_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46E81BC69EC000C39A22 /* address_icon.png */; };
+		B84D46EB1BC6A04000C39A22 /* address_icon_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = B84D46EA1BC6A04000C39A22 /* address_icon_gray.png */; };
 		B89EC3721B89E9DA006A0410 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3711B89E9DA006A0410 /* DetailViewController.m */; };
 		B89EC3751B89F221006A0410 /* EASingleLineText.m in Sources */ = {isa = PBXBuildFile; fileRef = B89EC3741B89F221006A0410 /* EASingleLineText.m */; };
 		B8A62AAB1B87FBE9004063E8 /* EALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A62AAA1B87FBE9004063E8 /* EALoginViewController.m */; };
@@ -117,6 +119,8 @@
 		B84D46E31BB989BE00C39A22 /* editbutton_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton_bg.png; sourceTree = "<group>"; };
 		B84D46E51BBE0E4B00C39A22 /* ResetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetInfoViewController.h; sourceTree = "<group>"; };
 		B84D46E61BBE0E4B00C39A22 /* ResetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetInfoViewController.m; sourceTree = "<group>"; };
+		B84D46E81BC69EC000C39A22 /* address_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_icon.png; sourceTree = "<group>"; };
+		B84D46EA1BC6A04000C39A22 /* address_icon_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_icon_gray.png; sourceTree = "<group>"; };
 		B89EC3701B89E9DA006A0410 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B89EC3711B89E9DA006A0410 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B89EC3731B89F221006A0410 /* EASingleLineText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASingleLineText.h; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 		B8CD2E6D1B76F3A800960B5E /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				B84D46EA1BC6A04000C39A22 /* address_icon_gray.png */,
+				B84D46E81BC69EC000C39A22 /* address_icon.png */,
 				B84D46E31BB989BE00C39A22 /* editbutton_bg.png */,
 				B84D46DE1BB6523C00C39A22 /* searchbar_bg.png */,
 				B84D46CB1BB647C400C39A22 /* priceicon_task.png */,
@@ -521,6 +527,7 @@
 				B84D46AF1BB1817500C39A22 /* main_button_registerworker.png in Resources */,
 				B84D46A41BB17E9900C39A22 /* main_background.png in Resources */,
 				B84D46AE1BB1817500C39A22 /* main_button_issue.png in Resources */,
+				B84D46E91BC69EC000C39A22 /* address_icon.png in Resources */,
 				B84D46E41BB989BE00C39A22 /* editbutton_bg.png in Resources */,
 				B84D46B01BB1817500C39A22 /* main_button_usercenter.png in Resources */,
 				B8CD2E901B7705CB00960B5E /* Default-568h@2x.png in Resources */,
@@ -534,6 +541,7 @@
 				B8CD2E6B1B76F07400960B5E /* ProjectDeclare in Resources */,
 				B84D46AD1BB1817500C39A22 /* main_button_findworker.png in Resources */,
 				B84D46BA1BB577A400C39A22 /* usercenter_resetinfo.png in Resources */,
+				B84D46EB1BC6A04000C39A22 /* address_icon_gray.png in Resources */,
 				B8EDCE691B874F1B00937F76 /* icon-57.png in Resources */,
 				B84D46CE1BB647C400C39A22 /* priceicon_worker.png in Resources */,
 				B8A62AB11B880A18004063E8 /* buttonBackground_green.png in Resources */,

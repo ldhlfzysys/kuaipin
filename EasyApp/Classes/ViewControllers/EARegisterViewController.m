@@ -44,14 +44,17 @@
         if ([blockSelf judgeNumber:blockSelf.nameLabel.contentTextField.text]) {
             [SVProgressHUD showErrorWithStatus:@"手机号不正确"];
         }else{
+            blockSelf.checkCodeLabel.getCheckCodeButton.enabled = NO;
+            [blockSelf.checkCodeLabel.getCheckCodeButton setTitle:@"请稍等" forState:UIControlStateNormal];
             [[NetWorkManager sharedManager]sendGetRequest:APIsendCheckNum param:@{@"mobile":blockSelf.nameLabel.contentTextField.text} CallBackHandle:^(id responseObject){
                 if ([[responseObject objectForKey:@"status"] integerValue] == 0) {
                     [SVProgressHUD showSuccessWithStatus:@"获取成功"];
-                    [blockSelf.checkCodeLabel.getCheckCodeButton setTitle:@"59" forState:UIControlStateNormal];
-                    [blockSelf.checkCodeLabel.getCheckCodeButton.timer fire];
+                    [blockSelf.checkCodeLabel.getCheckCodeButton setTitle:@"输入验证码" forState:UIControlStateNormal];
                     blockSelf.checkCodeLabel.getCheckCodeButton.checkCode = [[responseObject objectForKey:@"data"] objectForKey:@"checkNum"];
                 }else{
-                    [SVProgressHUD showErrorWithStatus:@"获取失败"];
+                    [SVProgressHUD showErrorWithStatus:@"获取失败或您已注册"];
+                    [blockSelf.checkCodeLabel.getCheckCodeButton setTitle:@"点击获取验证码" forState:UIControlStateNormal];
+                    blockSelf.checkCodeLabel.getCheckCodeButton.enabled = YES;
                 }
             }];
         }
@@ -108,8 +111,8 @@
 }
 
 - (BOOL)judgeNumber:(NSString *)_number{
-    NSString *phoneCheck=@"^1[3587]\\d{9}$";
-    NSPredicate *phonelTest=[NSPredicate predicateWithFormat:@"SELF MATCHES%@",phoneCheck];
+    NSString *phoneCheck=@"^1(3[0-9]|5[0-35-9]|8[025-9])//d{8}$";
+    NSPredicate *phonelTest=[NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneCheck];
     return [phonelTest evaluateWithObject:_number];
     
 }

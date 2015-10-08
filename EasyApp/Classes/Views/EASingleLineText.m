@@ -13,13 +13,17 @@
 - (instancetype)initWithFrame:(CGRect)frame HeadTitle:(NSString *)title Content:(NSString *)content{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        UILabel *headTitleLabel = [self labelWithFrame:CGRectMake(6, 0, 70, frame.size.height)];
-        UILabel *contentLabel = [self labelWithFrame:CGRectMake(88, 0, SCREEN_WIDTH - 90, frame.size.height)];
-        headTitleLabel.text = title;
-        contentLabel.text = content;
-        contentLabel.numberOfLines = 0;
-        [self addSubview:headTitleLabel];
-        [self addSubview:contentLabel];
+        _headTitleLabel = [self labelWithFrame:CGRectMake(6, 0, 70, frame.size.height)];
+        _contentLabel = [self labelWithFrame:CGRectMake(88, 0, SCREEN_WIDTH - 140, frame.size.height)];
+        _headTitleLabel.text = title;
+        _contentLabel.text = content;
+        _contentLabel.numberOfLines = 0;
+        [self addSubview:_headTitleLabel];
+        [self addSubview:_contentLabel];
+        _addressImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        _addressImage.EA_Right = frame.size.width - 15;
+        _addressImage.EA_CenterY = frame.size.height/2;
+        [self addSubview:_addressImage];
     }
     return self;
 }

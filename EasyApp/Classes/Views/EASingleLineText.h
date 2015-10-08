@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface EASingleLineText : UIView
+@property(nonatomic,strong)UILabel *headTitleLabel;
+@property(nonatomic,strong)UIImageView *addressImage;
+@property(nonatomic,strong)UILabel *contentLabel;
 - (instancetype)initWithFrame:(CGRect)frame HeadTitle:(NSString *)title Content:(NSString *)content;
+
 @end
