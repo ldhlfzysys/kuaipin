@@ -93,7 +93,7 @@
             _ageLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _genderLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"年龄要求:" Content:[dict objectForKey:@"taskAddress"]];
             [mainScrollView addSubview:_ageLabel];
 
-            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskFee"],@"元"]];
+            _priceLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _ageLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"提供薪酬:" Content:[NSString stringWithFormat:@"%@%@",[dict objectForKey:@"taskFee"],@"元/小时"]];
             [mainScrollView addSubview:_priceLabel];
             
             _educationLabel = [[EASingleLineText alloc]initWithFrame:CGRectMake(0, _priceLabel.EA_Bottom, SCREEN_WIDTH, commonLabelHegiht) HeadTitle:@"文化要求:" Content:[dict objectForKey:@"taskEducation"]];

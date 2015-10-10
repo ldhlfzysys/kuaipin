@@ -46,7 +46,7 @@
     _genderInput.needGenderSelectButton = YES;
     [self.view addSubview:_genderInput];
 
-    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 109, SCREEN_WIDTH - 24, 30) Title:@"提供薪酬" Placeholder:@"请输入提供的薪资"];
+    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 109, SCREEN_WIDTH - 24, 30) Title:@"提供薪酬" Placeholder:@"输入薪资：元/小时"];
     _priceInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
     _priceInput.contentTextField.delegate = self;
     [self.view addSubview:_priceInput];

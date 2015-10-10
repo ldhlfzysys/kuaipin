@@ -116,6 +116,7 @@ typedef enum {
         _maleLabel = [[UILabel alloc]initWithFrame:CGRectMake(14, 0, 20, 30)];
         _maleLabel.text = @"男";
         _gender = @"1";
+        _genderChinese = @"男";
         _maleLabel.font = [UIFont systemFontOfSize:13];
         _maleLabel.textColor = UIColorFromRGB(0x354e65);
         [self addSubview:_maleLabel];

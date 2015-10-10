@@ -20,7 +20,7 @@
         [btn addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *testItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
         self.navigationItem.leftBarButtonItem = testItem;
-        
+        AppUser *user = [DataCenterManager sharedManager].currentUser;
         
         if (type == ResetInfoTypePassword) {
             self.navigationItem.titleView = [Tools getTitleLab:@"修改密码"];
@@ -32,7 +32,8 @@
             [self.view addSubview:_gender];
         }else{
             self.navigationItem.titleView = [Tools getTitleLab:@"修改信息"];
-            _userName = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 25, SCREEN_WIDTH - 24, 30) Title:@"用户名" Placeholder:@"请输入用户名"];
+            
+            _userName = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 25, SCREEN_WIDTH - 24, 30) Title:@"用户名" Placeholder:user.name];
             [self.view addSubview:_userName];
             _gender = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 67, SCREEN_WIDTH - 24, 30) Title:@"选择性别" Placeholder:@""];
             _gender.needGenderSelectButton = YES;
@@ -70,6 +71,7 @@
             [[NetWorkManager sharedManager]sendGetRequest:APIAddress param:dict CallBackHandle:^(id responseObject){
                 if ([[responseObject objectForKey:@"status"] integerValue] == 0) {
                     [SVProgressHUD showSuccessWithStatus:@"更新成功"];
+                    [DataCenterManager sharedManager].currentUser.name = blockSelf.userName.contentTextField.text;
                     [blockSelf.navigationController popToRootViewControllerAnimated:YES];
                 }else{
                     [SVProgressHUD showErrorWithStatus:@"更新失败，检查网络"];

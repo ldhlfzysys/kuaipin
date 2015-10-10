@@ -54,7 +54,7 @@
     _ageInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
     _ageInput.contentTextField.delegate = self;
     [self.view addSubview:_ageInput];
-    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"薪酬要求" Placeholder:@"请输入期望薪资"];
+    _priceInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 193, SCREEN_WIDTH - 24, 30) Title:@"薪酬要求" Placeholder:@"输入期望薪资：元/小时"];
     _priceInput.contentTextField.keyboardType = UIKeyboardTypeNumberPad;
     _priceInput.contentTextField.delegate = self;
     [self.view addSubview:_priceInput];
