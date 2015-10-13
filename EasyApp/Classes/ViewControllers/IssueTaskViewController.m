@@ -65,10 +65,12 @@
     
     _detailaddressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 318, SCREEN_WIDTH - 24, 30) Title:@"街道" Placeholder:@"填写详细地址"];
     [self.view addSubview:_detailaddressInput];
-    
+    AppUser *user = [DataCenterManager sharedManager].currentUser;
     _contactInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"联系人" Placeholder:@"请输入联系人姓名"];
+    _contactInput.contentTextField.text = user.name;
     [self.view addSubview:_contactInput];
     _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 400, SCREEN_WIDTH - 24, 30) Title:@"联系电话" Placeholder:@"请输入联系人电话"];
+    _phoneInput.contentTextField.text = user.mobile;
     [self.view addSubview:_phoneInput];
     
     _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 460, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
