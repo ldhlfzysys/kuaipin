@@ -60,7 +60,7 @@
     [self.view addSubview:_priceInput];
     _educatedInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 234, SCREEN_WIDTH - 24, 30) Title:@"文化程度" Placeholder:@"请选择文化程度"];
     _educatedInput.needAreaSelect = YES;
-    _educatedInput.areaSelect.areaArray = [[NSArray alloc]initWithObjects:@"小学",@"初中",@"高中",@"专科",@"本科",@"研究生",@"博士", nil];
+    _educatedInput.areaSelect.areaArray = [[NSArray alloc]initWithObjects:@"不限",@"小学",@"初中",@"高中",@"专科",@"本科",@"研究生",@"博士", nil];
     [self.view addSubview:_educatedInput];
     _addressInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 276, SCREEN_WIDTH - 24, 30) Title:@"居住地" Placeholder:@"请选择居住地址"];
     _addressInput.needAreaSelect = YES;
@@ -69,10 +69,10 @@
     [self.view addSubview:_aboutmeInput];
     _contactInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"联系人" Placeholder:@"请输入联系人姓名"];
     //[self.view addSubview:_contactInput];
-    _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 402, SCREEN_WIDTH - 24, 30) Title:@"联系电话" Placeholder:@"请输入联系人电话"];
-    //[self.view addSubview:_phoneInput];
+    _phoneInput = [[EASingleLineInputView alloc]initWithFrame:CGRectMake(12, 360, SCREEN_WIDTH - 24, 30) Title:@"劳工手机" Placeholder:@"请输入劳工手机"];
+    [self.view addSubview:_phoneInput];
     
-    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 368, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
+    _confirmButton = [[EAButtonView alloc]initWithFrame:CGRectMake(12, 410, SCREEN_WIDTH - 24, 30) Title:@"确认" ColorType:BackgroundColorTypeGreen];
     [self.view addSubview:_confirmButton];
     
     __block RegisterWorkerViewController *blockSelf = self;
@@ -85,9 +85,9 @@
                               user.mobile,@"userMobile",
                               blockSelf.nameInput.contentTextField.text,@"name",
                               blockSelf.ageInput.contentTextField.text,@"age",
-                              blockSelf.genderInput.genderSelectButton.gender,@"gender",
+                              blockSelf.genderInput.genderSelectButton.genderChinese,@"gender",
                               blockSelf.workerTypeInput.contentTextField.text,@"workerMajor",
-                              blockSelf.educatedInput.contentTextField.text,@"workerEducation",
+                              blockSelf.educatedInput.areaSelect.areaLabel.text,@"workerEducation",
                               blockSelf.aboutmeInput.contentTextField.text,@"workerDetail",
                               blockSelf.addressInput.areaSelect.areaLabel.text,@"workerAddress",
                               blockSelf.priceInput.contentTextField.text,@"workerSalary",
